@@ -6,7 +6,8 @@
 ### Download Repository
 
 ```
- % git clone https://github.com/syohex/zsh-perl-completions.git ~/.zsh/perl-completions
+% git clone https://github.com/syohex/zsh-perl-completions.git ~/.zsh/perl-completions
+% rm ~/.zcompdump # remove cache
 ```
 
 ### Zsh configuration
