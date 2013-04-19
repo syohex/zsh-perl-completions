@@ -6,8 +6,8 @@ flavors=($(amon2-setup.pl -l | awk '{print $1}'))
 _arguments -n : \
   '*--flavor=[Basic Lite Minimum]:flavors:'"($flavors)" \
   '--vc=[Setup the Version Control(Default is git)]: :(Git)' \
-  '(--list-flavors -l)'{--list-flavors,-l}'[Shows the list of flavors installed]' \
-  '--help[Show this help]' \
+  '(-)'{--list-flavors,-l}'[Shows the list of flavors installed]' \
+  '(-)--help[Show this help]' \
   '*: :()'
 
 # Local Variables:
