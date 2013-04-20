@@ -1,5 +1,6 @@
 # zsh perl completions
 * minil(Minilla)
+* milla(Dist::Milla)
 * amon2-setup.pl(Amon2)
 * ph(App::ph)
 

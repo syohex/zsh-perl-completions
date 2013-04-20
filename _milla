@@ -1,0 +1,114 @@
+#compdef milla
+
+typeset -A opt_args
+local context state line
+
+local -a _milla_subcommands
+_milla_subcommands=(
+  "commands:list the application's commands"
+  "help:display a command's help screen"
+  "add:add modules to an existing dist"
+  "authordeps:list your distribution's author dependencies"
+  "build:build your dist"
+  "clean:clean up after build, test, or install"
+  "install:install your dist"
+  "listdeps:print your distributions prerequisites"
+  "new:mint a new dist"
+  "nop:do nothing:initialize dzil, then exit"
+  "release:release your dist"
+  "run:run stuff in a dir where your dist is built"
+  "setup:set up a basic global config file"
+  "smoke:smoke your dist"
+  "test:test your dist"
+)
+
+_arguments '*:: :->subcmd'
+
+if [[ "$state" == "subcmd" ]];then
+
+  if (( CURRENT == 1)); then
+    _describe -t commands "milla command" _milla_subcommands -V1
+    return
+  else
+    local opts curcontext
+
+    case "$words[1]" in
+      add | new)
+        opts=(
+          '(-p|--profile)'{-p,--profile}'[name of the profile to use]: :()'
+          '(-P|--provider)'{-P,--provider}'[name of the profile provider to use]: :()'
+        )
+        ;;
+      authordeps)
+        opts=(
+          '--root[the root of the dist; defaults to]'
+          '--missing[list only the missing dependencies]'
+          '--versions[include required version numbers in listing]'
+        )
+        ;;
+      build)
+        opts=(
+          '--trial[build a trial release that PAUSE will not index]'
+          '--tgz[build a tarball (default behavior)]'
+          '--in[the directory in which to build the distribution]'
+        )
+        ;;
+      clean)
+        opts=(
+          '(-n|--dry-run)'{-n,--dry-run}"[don't actually remove anything, just show what would be done]"
+        )
+        ;;
+      install)
+        opts=('--install-command[command to run to install (e.g. "cpan .")]')
+        ;;
+      listdeps)
+        opts=(
+          '--author[include author dependencies]'
+          '--missing[list only the missing dependencies]'
+          '--versions[include required version numbers in listing]'
+          '--json[list dependencies by phase, in JSON format]'
+        )
+        ;;
+      release)
+        opts=('--trial[build a trial release that PAUSE will not index]')
+        ;;
+      smoke)
+        opts=(
+          '--release[the RELEASE_TESTING env variable]'
+          '--automated[enables the AUTOMATED_TESTING env variable (default behavior)]'
+          '--author[enables the AUTHOR_TESTING env variable]'
+        )
+        ;;
+      test)
+        opts=(
+          '--release[enables the RELEASE_TESTING env variable]'
+          '--automated[enables the AUTOMATED_TESTING env variable]'
+          '--author[enables the AUTHOR_TESTING env variable (default behavior)]'
+          '--all[enables the RELEASE_TESTING, AUTOMATED_TESTING and AUTHOR_TESTING env variables]'
+        )
+        ;;
+      help)
+        local -a commands
+        opts=()
+        commands=(
+          "commands" "help" "add" "authordeps" "build" "clean" "install"
+          "listdeps" "new" "nop" "release" "run" "setup" "smoke" "test"
+        )
+        _arguments : "$opts[@]" "*::help:($commands)"
+        return
+        ;;
+      *)
+        opts=()
+        ;;
+    esac
+    _arguments -s : "$opts[@]" '*::Files:_files'
+  fi
+fi
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
