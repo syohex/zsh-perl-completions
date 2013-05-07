@@ -1,0 +1,38 @@
+#compdef plackup
+
+typeset -A opt_args
+local context state line
+
+local -a psgi_servers
+local psgi_server_dir
+psgi_server_dir=$(dirname $(perldoc -l Plack::Handler::Standalone))
+psgi_servers=($(find $psgi_server_dir -maxdepth 1 | perl -nle 'm{([^/]+)\.pm$} and print $1'))
+
+_arguments -C \
+  '(-)'{-h,--help}'[prints help]' \
+  '(-a --app)'{-a,--app}'[locate a .psgi script]' \
+  '(-o --host)'{-o,--host}'[the interface a TCP based server daemon binds to]' \
+  '(-p --port)'{-p,--port}'[the port number a TCP based server daemon listens on]' \
+  '(-s --server)'{-s,--server}'[select a specific implementation to run on]: :'"($psgi_servers)" \
+  '(-S --socket)'{-S,--socket}'[UNIX domain socket path to listen on]' \
+  '(-l --listen)'{-l,--listen}'[addresses to listen on]' \
+  '(-D --daemonize)'{-D,--daemonize}'[makes the process go background]' \
+  '(--no-default-middleware)--no-default-middleware[prevents loading middleware stack]' \
+  '(-e)-e[evaluate the given code as a PSGI app]' \
+  '(-I)-I[specify perl library include path]' \
+  '*-M[specify modules to load before loading the app code]: :_perl_m_opt' \
+  '(-E --env)'{-E,--env}'[specify the environment option]' \
+  '(-r --reload)'{-r,--reload}'[make plackup to watch updates from your development directory and restarts the server whenever a file is updated]' \
+  '(-R --Reload)'{-R,--Reload}'[allows you to specify the path to watch file updates separated by comma]' \
+  '(-L --Loader)'{-L,--Loader}'[specify the server loading subclass that implements how to run the server]' \
+  '(--access-log)--access-log[specify the pathname of a file where the access log should be written]' \
+  '(--path)--path[Speficy the root path of application to run]' \
+  '(1 *): :_files' && return 0
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
