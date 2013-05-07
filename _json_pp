@@ -1,0 +1,41 @@
+#compdef json_pp
+
+local -a from_formats
+local -a to_formats
+local -a json_opts
+
+from_formats=("json" "eval")
+to_formats=("null" "json" "dumper")
+json_opts=(
+  "ascii"
+  "latin1"
+  "utf8"
+  "pretty"
+  "indent"
+  "space_before"
+  "space_after"
+  "relaxed"
+  "canonical"
+  "allow_nonref"
+  "allow_singlequote"
+  "allow_barekey"
+  "allow_bignum"
+  "loose"
+  "escape_slash"
+)
+
+_arguments -n : \
+  '(-v)-v[Be slightly more verbose]' \
+  '(-)-V[Prints version and exits]' \
+  '(-f)-f[Read a file in the given format from STDIN]: :'"($from_formats)" \
+  '(-t)-t[Write the file in the given format to STDOUT]: :'"($to_formats)" \
+  '-json_opt[option to JSON::PP(comma separated)]: :'"($json_opts)" \
+  '*: :()'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
