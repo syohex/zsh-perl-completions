@@ -1,0 +1,61 @@
+#compdef plenv
+
+typeset -A opt_args
+local context state line
+
+local -a _plenv_subcommands
+_plenv_subcommands=(
+  "available:Show available Perl5 versions from CPAN"
+  "exec:Execute command under Perl5"
+  "global:Set or show the global Perl version"
+  "help:Show help message"
+  "init:Initialize"
+  "install:Install Perl5 into ~/.plenv/"
+  "install-cpanm:Install cpanm to current Perl"
+  "list:Show list of installed Perl5 versions"
+  "list-modules:Show installed module list from current perl"
+  "local:Set or show the local application-specific Perl version"
+  "migrate-modules:Migrate CPAN modules from other Perl installation"
+  "rehash:Rehash shims"
+  "version:Show the current Perl version and its origin"
+  "versions:Alias for 'plenv list'"
+  "which:Locate a program file in the plenv's path"
+)
+
+_arguments '*:: :->subcmd'
+
+if [[ "$state" == "subcmd" ]];then
+
+  if (( CURRENT == 1 )); then
+    _describe -t commands "plenv command" _plenv_subcommands -V1
+    return
+  else
+    local opts curcontext
+
+    case "$words[1]" in
+      local | global | migrate-modules)
+        local -a installed_versions
+        installed_versions=($(plenv list | perl -pe 's{[ *] }{}'))
+        _wanted installed_versions expl 'perl-<version-number>' \
+          compadd $installed_versions && return 0
+        ;;
+      install)
+        local -a perl_versions
+        perl_versions=($(plenv available | perl -pe 's/perl-?//'))
+        _wanted perl_versions expl 'perl-<version-number>' \
+          compadd $perl_versions && return 0
+        ;;
+      *)
+        _arguments -s : "" '*::Files:_files'
+        ;;
+    esac
+  fi
+fi
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
