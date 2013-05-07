@@ -1,0 +1,50 @@
+#compdef json_xs
+
+local -a from_formats
+local -a to_formats
+
+from_formats=(
+  "json"
+  "storable"
+  "storable-file"
+  "bencode"
+  "clzf"
+  "eval"
+  "yaml"
+  "string"
+  "none"
+)
+
+to_formats=(
+  "json"
+  "json-utf-8"
+  "json-pretty"
+  "json-utf-16le"
+  "json-utf-32le"
+  "storable"
+  "storable-file"
+  "incompatible"
+  "bencode"
+  "files,"
+  "clzf"
+  "yaml"
+  "dump"
+  "dumper"
+  "string"
+  "none"
+)
+
+_arguments -n : \
+  '(-v)-v[Be slightly more verbose]' \
+  '(-f)-f[Read a file in the given format from STDIN]: :'"($from_formats)" \
+  '(-t)-t[Write the file in the given format to STDOUT]: :'"($to_formats)" \
+  '-e[Evaluate Perl code]' \
+  '*: :()'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
