@@ -1,10 +1,15 @@
 # zsh perl completions
-* minil([Minilla](https://metacpan.org/module/Minilla))
-* milla([Dist::Milla](https://metacpan.org/module/Dist::Milla))
 * amon2-setup.pl([Amon2](https://metacpan.org/module/Amon2))
-* ph([App::ph](https://metacpan.org/module/App::ph))
-* json_xs([JSON::XS](https://metacpan.org/module/JSON::XS))
+* carton([Carton](https://metacpan.org/module/Carton))
 * json_pp([JSON::PP](https://metacpan.org/module/JSON::PP))
+* json_xs([JSON::XS](https://metacpan.org/module/JSON::XS))
+* milla([Dist::Milla](https://metacpan.org/module/Dist::Milla))
+* minil([Minilla](https://metacpan.org/module/Minilla))
+* perl-build([Perl::Build](https://metacpan.org/module/Perl::Build))
+* ph([App::ph](https://metacpan.org/module/App::ph))
+* plackup([App::plenv](https://metacpan.org/module/Plack))
+* plenv([App::plenv](https://metacpan.org/module/App::plenv))
+* start_server([Server::Starter](https://metacpan.org/module/Server::Starter))
 
 ## How to Use
 
