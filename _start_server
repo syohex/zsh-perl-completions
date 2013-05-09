@@ -1,0 +1,24 @@
+#compdef start_server
+
+local -a signals
+signals=($(kill -l | perl -lne 'print "SIG$_" for split q{ }'))
+
+_arguments -n : \
+  '(--port)--port=[TCP port to listen to]' \
+  '(--path)--path=[path at where to listen using UNIX socket]' \
+  '(--interval)--interval=[minimum interval to respawn the server program]' \
+  '(--signal-on-hup)--signal-on-hup=[signal to be sent the server process when start_server receives a SIGHUP]: :($signals)' \
+  '(--signal-on-term)--signal-on-term=[signal to be sent the server process when start_server receives a SIGTERM]: : '"($signals)" \
+  '(--pid-file)--pid-file=[pid file]: :_files' \
+  '(--restart)--restart[ss]' \
+  '(-)--help[prints this help]' \
+  '(-)--version[prints the version number]' \
+  '*::arguments:_normal'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
