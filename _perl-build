@@ -1,0 +1,18 @@
+#compdef perl-build
+
+_arguments -n : \
+  '*-D["D" flag passed to ./Configura script]' \
+  '*-A["A" flag passed to ./Configura script]' \
+  '*-U["U" flag passed to ./Configura script]' \
+  '(--test)--test[enable tests after building]' \
+  '(--patches)--patches=[set value to PERL5_PATCHPERL_PLUGIN]' \
+  '(--build-dir)--build-dir=[specify perl build path]' \
+  '*: :_files'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
