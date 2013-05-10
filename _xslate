@@ -1,0 +1,29 @@
+#compdef xslate
+
+_arguments -n : \
+  '(-a --cache)'{-a,--cache}'[Cache level]' \
+  '(-t --type)'{-t,--type}'[Output content type]:Content Type:(html xml text)' \
+  '(-E --engine)'{-e,--engine}'[Template engine]' \
+  '*'{-D,--define}'[Define template variables]' \
+  '*'{-I,--path}'[Include paths]:Include Paths:_files -/' \
+  '(-)--version[Print version information]' \
+  '(--oe --output_encoding)'{--oe,--output_encoding}'[Output encoding]' \
+  '*'{-M,--module}'[Modules templates will use]' \
+  '(-e --eval)'{-e,--eval}'[One line of template code]' \
+  '(-s --syntax)'{-s,--syntax}'[Template syntax]' \
+  '(-d --debug)'{-d,--debug}'[Debugging flags]' \
+  '(-x --suffix)'{-x,--suffix}'[Output suffix mapping]' \
+  '(--ie --input_encoding)'{--ie,--input_encoding}'[Input encoding]' \
+  '(-i --ignore)'{-i,--ignore}'[Regular expression the process will ignore]' \
+  '(-c --cachedir)'{-c,--cachedir}'[Dorectpry the cache files will be saved in]:Cache Dir:_files -/' \
+  '(-o --dest)'{-o,--dest}'[Destination directory]' \
+  '(-w --verbose)'{-w,--verbose}'[Warning level]' \
+  '*: :_files'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
