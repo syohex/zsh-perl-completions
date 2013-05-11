@@ -45,8 +45,13 @@ if [[ "$state" == "subcmd" ]];then
         _wanted perl_versions expl 'perl-<version-number>' \
           compadd $perl_versions && return 0
         ;;
+      exec)
+        opts=()
+        _arguments -s : "$opts[@]" '*:normal:_normal'
+        ;;
       *)
-        _arguments -s : "" '*::Files:_files'
+        opts=()
+        _arguments -s : "$opts[@]" '*:Files:_files'
         ;;
     esac
   fi
