@@ -1,0 +1,16 @@
+#compdef ukigumo-agent
+
+_arguments -n : \
+  '(--server-url)--repo=[ukigumo-server URL]' \
+  '(--work_dir)--work_dir=[project name]:WorkDir:_files -/' \
+  '(--host)--host=[Bind host]' \
+  '(--port)--port=[Bind port]' \
+  '*: :()'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
