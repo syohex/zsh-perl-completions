@@ -10,6 +10,9 @@
 * plackup([App::plenv](https://metacpan.org/module/Plack))
 * plenv([App::plenv](https://metacpan.org/module/App::plenv))
 * start_server([Server::Starter](https://metacpan.org/module/Server::Starter))
+* ukigumo-agent([Ukigumo::Agent](https://metacpan.org/module/Ukigumo::Agent))
+* ukigumo-client.pl([Ukigumo::Client](https://metacpan.org/module/Ukigumo::Client))
+* xslate([Text::Xslate](https://metacpan.org/module/Text::Xslate))
 
 ## How to Use
 
