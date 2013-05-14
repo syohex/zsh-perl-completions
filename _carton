@@ -29,7 +29,13 @@ if [[ "$state" == "subcmd" ]];then
     local opts curcontext
 
     case "$words[1]" in
-      bundle|check)
+      bundle)
+        opts=(
+          '(-p|--path)'{-p,--path}'[carton path]: :_files'
+          '(-):command: _command_names -e'
+        )
+        ;;
+      check)
         opts=('(-p|--path)'{-p,--path}'[carton path]: :_files')
         ;;
       exec)

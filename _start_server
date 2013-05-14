@@ -13,6 +13,7 @@ _arguments -n : \
   '(--restart)--restart[ss]' \
   '(-)--help[prints this help]' \
   '(-)--version[prints the version number]' \
+  '(-):command: _command_names -e' \
   '*::arguments:_normal'
 
 # Local Variables:
