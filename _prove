@@ -1,0 +1,55 @@
+#compdef prove
+
+_arguments -n : \
+  '(-v --verbose)'{-v,--verbose}'[Print all test lines]' \
+  '(-l --lib)'{-l,--lib}'[Add "lib"to path for your tests]' \
+  '(-b --blib)'{-b,--blib}'[Add "blib/lib" and "blib/arch" to path for your test]' \
+  '(-s --shuffle)'{-s,--shuffle}'[Run the tests in random order]' \
+  '(-c --color --nocolor)'{-c,--color}'[Colored test output]' \
+  '(-c --color --nocolor)--nocolor[Do not color test output]' \
+  '(--count --nocount)--count[Show the X/Y test count when not verbose]' \
+  '(--count --nocount)--nocount[Disable the X/Y test count]' \
+  '(-D --dry)'{-D,--dry}'[Dry run]' \
+  '(-f --failures)'{-f,--failures}'[Show failed tests]' \
+  '(-o --comments)'{-o,--comments}'[Show comments]' \
+  '(--ignore-exit)--ignore-exit[Ignore exit status from test scripts]' \
+  '(-m --merge)'{-m,--merge}'[Merge test STDERR of scripts with their STDOUT]' \
+  '(-r --recurse)'{-r,--recurse}'[Recursively descend into directories]' \
+  '(--reverse)--reverse[Run the tests in reverse order]' \
+  '(-q --quiet)'{-q,--quiet}'[Suppress some test output while running tests]' \
+  '(-Q --QUIET)'{-Q,--QUIET}'[Only print summary results]' \
+  '(-p --parse)'{-p,--parse}'[Show full list of TAP parse errors, if any]' \
+  '(--directives)--directives[Only show results with TODO or SKIP directives]' \
+  '(--timer)--timer[Print elapsed time after each test]' \
+  '(--trap)--trap[Trap Ctrl-C and prnt summary on interrupt]' \
+  '(--normalize)--normalize[Normalize TAP output in verbose output]' \
+  '(-T)-T[Enable tainting checks]' \
+  '(-t)-t[Enable tainting warnings]' \
+  '(-W)-W[Enable fatal warnings]' \
+  '(-w)-w[Enable warnings]' \
+  '(-)'{-h,--help}'[Display this help]' \
+  '(-)-?[Display this help]' \
+  '(-H --man)'{-H,--man}'[Longer manpage for prove]' \
+  '(--norc)--norc[Do not process default .proverc]' \
+  '*-I[Library paths to include]:libpath:_files -/' \
+  '*-P[Load plugin]' \
+  '*-M[Load a module]' \
+  '(-e --exec)'{-e,--exec}'[Interpreter to run the tests]' \
+  '(--ext)--ext[Set the extension for tests]' \
+  '(--harness)--harness[Define test harness to use]' \
+  '(--formatter)--formatter[Result formatter to use]' \
+  '(--source)--source[Load and/or configure a SourceHandler]' \
+  '(-a --archive)'{-a,--archive}'[Store the resulting TAP in an archive file]:archive:_files' \
+  '(-j --jobs)'{-j,--jobs}'[Run N test jobs in parallel]' \
+  '(--state)--state=[Control prove persistent state]' \
+  '(--rc)--rc=[Process options from rcfile]' \
+  '(--rules)--rules[rules for parallel vs sequential processing]' \
+  '*: :_files'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
