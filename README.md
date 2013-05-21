@@ -5,6 +5,7 @@
 * json_xs([JSON::XS](https://metacpan.org/module/JSON::XS))
 * milla([Dist::Milla](https://metacpan.org/module/Dist::Milla))
 * minil([Minilla](https://metacpan.org/module/Minilla))
+* nytprofhtml([Devel::NYTProf](https://metacpan.org/module/Devel::NYTProf))
 * perl-build([Perl::Build](https://metacpan.org/module/Perl::Build))
 * ph([App::ph](https://metacpan.org/module/App::ph))
 * plackup([App::plenv](https://metacpan.org/module/Plack))

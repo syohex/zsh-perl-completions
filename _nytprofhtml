@@ -1,0 +1,19 @@
+#compdef nytprofhtml
+
+_arguments -n : \
+  '(-f --file)'{-f,--file}'[Specifies the output file name(Default ./nytprof.out)]:outfile:_files' \
+  '(-o --out)'{-o,--out}'[Directory in which to place report files]:outdir:_files -/' \
+  '(-d --delete)'{-d,--delete}'[Purge any existing contents of the report output directory]' \
+  '*'{-l,--lib}'[Add a path to the beginning of @INC]:incpath:_files -/' \
+  '(--open)--open[Open browser after profile file generated]' \
+  '(--no-frame)--no-frame[Disable generation of the framegraph on the index page]' \
+  '(-)'{-h,--help}'[Print the help messeage]' \
+  '*: :()'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
