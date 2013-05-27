@@ -29,6 +29,8 @@ if [[ "$state" == "subcmd" ]];then
     case "$words[1]" in
       new)
         opts=(
+          '(--username)--username[Specifies Username]: :()'
+          '(--email)--email[Specifies Email Address]: :()'
           '(-p|--profile)'{-p,--profile}'[Minilla profile]: :(XS)'
         )
         ;;

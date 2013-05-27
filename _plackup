@@ -20,7 +20,7 @@ _arguments -C \
   '(--no-default-middleware)--no-default-middleware[prevents loading middleware stack]' \
   '(-e)-e[evaluate the given code as a PSGI app]' \
   '(-I)-I[specify perl library include path]' \
-  '*-M[specify modules to load before loading the app code]' \
+  '*-M-[specify modules to load before loading the app code]:module:_perl_modules -S= -q' \
   '(-E --env)'{-E,--env}'[specify the environment option]' \
   '(-r --reload)'{-r,--reload}'[make plackup to watch updates from your development directory and restarts the server whenever a file is updated]' \
   '(-R --Reload)'{-R,--Reload}'[allows you to specify the path to watch file updates separated by comma]' \

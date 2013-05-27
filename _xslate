@@ -8,7 +8,7 @@ _arguments -n : \
   '*'{-I,--path}'[Include paths]:Include Paths:_files -/' \
   '(-)--version[Print version information]' \
   '(--oe --output_encoding)'{--oe,--output_encoding}'[Output encoding]' \
-  '*'{-M,--module}'[Modules templates will use]' \
+  \*{-M,--module}'-[Modules templates will use]:module:_perl_modules -S= -q' \
   '(-e --eval)'{-e,--eval}'[One line of template code]' \
   '(-s --syntax)'{-s,--syntax}'[Template syntax]' \
   '(-d --debug)'{-d,--debug}'[Debugging flags]' \

@@ -1,6 +1,9 @@
 #compdef prove
 
-_arguments -n : \
+typeset -A opt_args
+local context state line
+
+_arguments -C \
   '(-v --verbose)'{-v,--verbose}'[Print all test lines]' \
   '(-l --lib)'{-l,--lib}'[Add "lib"to path for your tests]' \
   '(-b --blib)'{-b,--blib}'[Add "blib/lib" and "blib/arch" to path for your test]' \
@@ -33,7 +36,7 @@ _arguments -n : \
   '(--norc)--norc[Do not process default .proverc]' \
   '*-I[Library paths to include]:libpath:_files -/' \
   '*-P[Load plugin]' \
-  '*-M[Load a module]' \
+  '*-M-[Load a module]:module:_perl_modules -S= -q' \
   '(-e --exec)'{-e,--exec}'[Interpreter to run the tests]' \
   '(--ext)--ext[Set the extension for tests]' \
   '(--harness)--harness[Define test harness to use]' \
@@ -44,7 +47,7 @@ _arguments -n : \
   '(--state)--state=[Control prove persistent state]' \
   '(--rc)--rc=[Process options from rcfile]' \
   '(--rules)--rules[rules for parallel vs sequential processing]' \
-  '*: :_files'
+  '(1 *): :_files' && return 0
 
 # Local Variables:
 # mode: Shell-Script
