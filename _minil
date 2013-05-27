@@ -31,7 +31,7 @@ if [[ "$state" == "subcmd" ]];then
         opts=(
           '(--username)--username[Specifies Username]:username:()'
           '(--email)--email[Specifies Email Address]:email:()'
-          '(-p|--profile)'{-p,--profile}'[Minilla profile]: :(XS)'
+          '(-p|--profile)'{-p,--profile}'[Minilla profile]:profiles:(XS)'
         )
         ;;
       install)
