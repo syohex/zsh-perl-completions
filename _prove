@@ -3,7 +3,7 @@
 typeset -A opt_args
 local context state line
 
-_arguments -C \
+_arguments -s -C \
   '(-v --verbose)'{-v,--verbose}'[Print all test lines]' \
   '(-l --lib)'{-l,--lib}'[Add "lib"to path for your tests]' \
   '(-b --blib)'{-b,--blib}'[Add "blib/lib" and "blib/arch" to path for your test]' \
