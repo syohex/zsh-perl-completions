@@ -26,7 +26,7 @@ if [[ "$state" == "subcmd" ]];then
     _describe -t commands "carton command" _carton_subcommands -V1
     return
   else
-    local opts curcontext
+    local opts curcontext subcmds
 
     case "$words[1]" in
       check)
@@ -49,16 +49,21 @@ if [[ "$state" == "subcmd" ]];then
         )
         ;;
       help)
-        opts=(
+        opts=()
+        subcmds=(
           "bundle" "check" "exec" "FAQ" "install" "list" "show" "tree" "update" "version"
         )
-        _arguments -s : "*::subcommands:($opts)" && return
+        _arguments -s : "$opts[@]" "*::subcommands:($subcmds)" && return 0
+        ;;
+      exec)
+        opts=()
+        _arguments -s : "$opts[@]" '*::arguments:_normal' && return 0
         ;;
       *)
         opts=()
         ;;
     esac
-    _arguments -s : "$opts[@]" '*::arguments:_normal'
+    _arguments -s : "$opts[@]" '*:: :()'
   fi
 fi
 
