@@ -29,20 +29,8 @@ if [[ "$state" == "subcmd" ]];then
     local opts curcontext
 
     case "$words[1]" in
-      bundle)
-        opts=(
-          '(-p --path)'{-p,--path}'[carton path]: :_files'
-          '(-):command: _command_names -e'
-        )
-        ;;
       check)
-        opts=('(-p --path)'{-p,--path}'[carton path]: :_files')
-        ;;
-      exec)
-        opts=(
-          '*-I[Include path]'
-          '(--system)--system[use "system" function]'
-        )
+        opts=('(--cpanfile)--cpanfile=[Specify cpanfile path]: :_files')
         ;;
       install)
         opts=(
@@ -57,16 +45,20 @@ if [[ "$state" == "subcmd" ]];then
         ;;
       list)
         opts=(
-          '(--tree --notree)--tree'
-          '(--tree --notree)--notree'
+          '(--distfile)--distfile[Displays the list of distributions in a distfile format]'
         )
+        ;;
+      help)
+        opts=(
+          "bundle" "check" "exec" "FAQ" "install" "list" "show" "tree" "update" "version"
+        )
+        _arguments -s : "*::subcommands:($opts)" && return
         ;;
       *)
         opts=()
         ;;
     esac
     _arguments -s : "$opts[@]" '*::arguments:_normal'
-
   fi
 fi
 
