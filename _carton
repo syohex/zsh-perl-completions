@@ -31,12 +31,12 @@ if [[ "$state" == "subcmd" ]];then
     case "$words[1]" in
       bundle)
         opts=(
-          '(-p|--path)'{-p,--path}'[carton path]: :_files'
+          '(-p --path)'{-p,--path}'[carton path]: :_files'
           '(-):command: _command_names -e'
         )
         ;;
       check)
-        opts=('(-p|--path)'{-p,--path}'[carton path]: :_files')
+        opts=('(-p --path)'{-p,--path}'[carton path]: :_files')
         ;;
       exec)
         opts=(
@@ -46,11 +46,13 @@ if [[ "$state" == "subcmd" ]];then
         ;;
       install)
         opts=(
-          '(-p|--path)'{-p,--path}'[carton path]: :_files'
-          '(--deployment|--nodeployment)--deployment'
-          '(--deployment|--nodeployment)--nodeployment'
-          '(--cache|--nocache)--cache'
-          '(--cache|--nocache)--nocache'
+          '(-p --path)'{-p,--path}'[carton path]: :_files'
+          '(--cpanfile)--cpanfile[Specify the alternate path for cpanfile]: :_files'
+          '(--deployment --nodeployment)--deployment[Force the deployment mode]'
+          '(--deployment --nodeployment)--nodeployment[No deplyment mode]'
+          '(--without)--without[Specify phases or features to exclude]: :(development)'
+          '(--cached --nocached)--cached[Use mirror]'
+          '(--cached --nocached)--nocached[Not use mirror]'
         )
         ;;
       list)
