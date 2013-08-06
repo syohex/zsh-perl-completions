@@ -34,7 +34,7 @@ if [[ "$state" == "subcmd" ]];then
         ;;
       install)
         opts=(
-          '(-p --path)'{-p,--path}'[carton path]: :_files'
+          '(-p --path)'{-p,--path}'[Specify the path to install modules to]: :_files -/'
           '(--cpanfile)--cpanfile[Specify the alternate path for cpanfile]: :_files'
           '(--deployment --nodeployment)--deployment[Force the deployment mode]'
           '(--deployment --nodeployment)--nodeployment[No deplyment mode]'
