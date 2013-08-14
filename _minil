@@ -13,6 +13,7 @@ _minil_subcommands=(
   'install:Install distribution'
   'release:Release distribution to CPAN'
   'migrate:Migrate existed distribution repo'
+  'run:Run arbitrary commands'
   'help:Help me'
 )
 
@@ -51,6 +52,11 @@ if [[ "$state" == "subcmd" ]];then
           '--author[enable the AUTHOR_TESTING env variable]'
           '--all[enable the All env variables]'
         )
+        ;;
+      run)
+        opts=()
+        _arguments -s : "$opts[@]" '*::arguments:_normal'
+        return 0
         ;;
       *)
         opts=()
