@@ -1,9 +1,9 @@
 #compdef perl-build
 
 _arguments -n : \
-  '*-D["D" flag passed to ./Configura script]' \
-  '*-A["A" flag passed to ./Configura script]' \
-  '*-U["U" flag passed to ./Configura script]' \
+  '*-D["D" flag passed to ./Configure script]' \
+  '*-A["A" flag passed to ./Configure script]' \
+  '*-U["U" flag passed to ./Configure script]' \
   '(--test)--test[enable tests after building]' \
   '(--patches)--patches=[set value to PERL5_PATCHPERL_PLUGIN]' \
   '(--build-dir)--build-dir=[specify perl build path]' \
