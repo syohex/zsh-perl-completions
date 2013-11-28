@@ -35,6 +35,9 @@ if [[ "$state" == "subcmd" ]];then
           '(-p|--profile)'{-p,--profile}'[Minilla profile]:profiles:(XS)'
         )
         ;;
+      clean)
+        opts=('(-y)-y[delete files without asking]')
+        ;;
       install)
         opts=('--no-test[Do not run test]')
         ;;
