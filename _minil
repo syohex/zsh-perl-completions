@@ -62,6 +62,12 @@ if [[ "$state" == "subcmd" ]];then
         _arguments -s : "$opts[@]" '*::arguments:_normal'
         return 0
         ;;
+      help)
+        local -a subcommands
+        subcommands=(new build test clean dist install release migrate help)
+        _arguments -s : "()"'*: :'"($subcommands)"
+        return 0
+        ;;
       *)
         opts=()
         ;;
