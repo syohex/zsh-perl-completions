@@ -1,0 +1,16 @@
+#compdef ukigumo-server
+
+_arguments -n : \
+  '(--host -h)'{-h,--host}'[Bind host(Default: 0)]' \
+  '(--port -p)'{-p,--port}'[Bind port(Default: 2828)]' \
+  '(--max-workers)--max-workers=[Max workers(Default: 4)]' \
+  '(--config -c)'{-c,--config}'[Configuration file]: :_files'\
+  '*: :()'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
