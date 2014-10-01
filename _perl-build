@@ -8,6 +8,7 @@ _arguments -n : \
   '(--patches)--patches=[set value to PERL5_PATCHPERL_PLUGIN]' \
   '(--build-dir)--build-dir=[specify perl build path]:builddir:_files -/' \
   '(-j --jobs)'{-j,--jobs}'[Parallel building and testing]' \
+  '(--tarball-dir)--tarball-dir[Specify the tar ball saving directory]:tardir:_files -/' \
   '(--definitions)--definitions[Display the available perl versions and exit]' \
   '(--symlink-devel-executables)--symlink-devel-executables[Create symlinks for development version perl commands.]' \
   '(-)--version[Show version number and exit]' \
