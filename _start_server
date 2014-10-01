@@ -11,8 +11,8 @@ _arguments -n : \
   '(--signal-on-term)--signal-on-term=[signal to be sent the server process when start_server receives a SIGTERM]: : '"($signals)" \
   '(--pid-file)--pid-file=[pid file]: :_files' \
   '(--restart)--restart[ss]' \
-  '(-)--help[prints this help]' \
-  '(-)--version[prints the version number]' \
+  '(- :)--help[prints this help]' \
+  '(- :)--version[prints the version number]' \
   '(-):command: _command_names -e' \
   '*::arguments:_normal'
 

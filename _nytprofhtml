@@ -7,7 +7,7 @@ _arguments -n : \
   '*'{-l,--lib}'[Add a path to the beginning of @INC]:incpath:_files -/' \
   '(--open)--open[Open browser after profile file generated]' \
   '(--no-frame)--no-frame[Disable generation of the framegraph on the index page]' \
-  '(-)'{-h,--help}'[Print the help messeage]' \
+  '(- :)'{-h,--help}'[Print the help messeage]' \
   '*: :()'
 
 # Local Variables:

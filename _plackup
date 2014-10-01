@@ -9,7 +9,6 @@ psgi_server_dir=$(dirname $(perldoc -l Plack::Handler::Standalone))
 psgi_servers=($(find $psgi_server_dir -maxdepth 1 | perl -nle 'm{([^/]+)\.pm$} and print $1'))
 
 _arguments -C \
-  '(-)'{-h,--help}'[prints help]' \
   '(-a --app)'{-a,--app}'[locate a .psgi script]' \
   '(-o --host)'{-o,--host}'[the interface a TCP based server daemon binds to]' \
   '(-p --port)'{-p,--port}'[the port number a TCP based server daemon listens on]' \
@@ -27,6 +26,8 @@ _arguments -C \
   '(-L --Loader)'{-L,--Loader}'[specify the server loading subclass that implements how to run the server]' \
   '(--access-log)--access-log[specify the pathname of a file where the access log should be written]' \
   '(--path)--path[Speficy the root path of application to run]' \
+  '(- :)'{-h,--help}'[show help]' \
+  '(- :)--version[show version]' \
   '(1 *): :_files' && return 0
 
 # Local Variables:
