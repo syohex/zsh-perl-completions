@@ -11,7 +11,7 @@ _arguments -n : \
   '(--tarball-dir)--tarball-dir[Specify the tar ball saving directory]:tardir:_files -/' \
   '(--definitions)--definitions[Display the available perl versions and exit]' \
   '(--symlink-devel-executables)--symlink-devel-executables[Create symlinks for development version perl commands.]' \
-  '(-)--version[Show version number and exit]' \
+  '(- :)--version[Show version number and exit]' \
   '*: :_files'
 
 # Local Variables:
