@@ -6,7 +6,7 @@ _arguments -n : \
   '*-U["U" flag passed to ./Configure script]' \
   '(--test)--test[enable tests after building]' \
   '(--patches)--patches=[set value to PERL5_PATCHPERL_PLUGIN]' \
-  '(--build-dir)--build-dir=[specify perl build path]' \
+  '(--build-dir)--build-dir=[specify perl build path]:builddir:_files -/' \
   '(-j --jobs)'{-j,--jobs}'[Parallel building and testing]' \
   '(--definitions)--definitions[Display the available perl versions and exit]' \
   '(--symlink-devel-executables)--symlink-devel-executables[Create symlinks for development version perl commands.]' \
