@@ -1,0 +1,15 @@
+#compdef jailing
+
+_arguments -n : \
+  '(--root)--root=[Root of the chroot jail]: :_files -/' \
+  '(--umount)--umount[unmount the bound mount points]' \
+  '--bound=[mounts src-path of host to dest-path of the jail]: :_files -/' \
+  '*::arguments:_normal'
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
