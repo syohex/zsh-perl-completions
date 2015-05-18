@@ -3,7 +3,8 @@
 _arguments -n : \
   '(--root)--root=[Root of the chroot jail]: :_files -/' \
   '(--umount)--umount[unmount the bound mount points]' \
-  '--bound=[mounts src-path of host to dest-path of the jail]: :_files -/' \
+  '--bind=[mounts src-path of host to dest-path of the jail]: :_files -/' \
+  '--robind=[read-only mounts src-path of host to dest-path of the jail]: :_files -/' \
   '(- :)--version[Show version]' \
   '(- :)--help[Show help]' \
   '*::arguments:_normal'
