@@ -1,6 +1,8 @@
 # zsh perl completions
 * amon2-setup.pl([Amon2](https://metacpan.org/module/Amon2))
+* carmel([Carmel](https://github.com/miyagawa/Carmel))
 * carton([Carton](https://metacpan.org/module/Carton))
+* jailing([jailing](https://github.com/kazuho/jailing))
 * json_pp([JSON::PP](https://metacpan.org/module/JSON::PP))
 * json_xs([JSON::XS](https://metacpan.org/module/JSON::XS))
 * milla([Dist::Milla](https://metacpan.org/module/Dist::Milla))
