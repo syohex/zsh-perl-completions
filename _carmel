@@ -2,7 +2,7 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2016 Syohei YOSHIDA
+# Copyright (c) 2022 Shohei YOSHIDA
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -33,6 +33,8 @@ _carmel_subcommands=(
   "find: Find module in a repository"
   "show: Show module location"
   "list: List all the modules to be loaded"
+  "update: Update modules"
+  "diff: show diffs for cpanfile.snapshot"
   "tree: List all the modules in a tree"
   "exec: Run your perl script with modules from artifacts"
   "rollout: Roll out the currently selected modules into ./local"
