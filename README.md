@@ -3,6 +3,7 @@
 * amon2-setup.pl([Amon2](https://metacpan.org/module/Amon2))
 * carmel([Carmel](https://github.com/miyagawa/Carmel))
 * carton([Carton](https://metacpan.org/module/Carton))
+* cpanm([App::cpanminus](https://metacpan.org/pod/App::cpanminus))
 * jailing([jailing](https://github.com/kazuho/jailing))
 * json_pp([JSON::PP](https://metacpan.org/module/JSON::PP))
 * json_xs([JSON::XS](https://metacpan.org/module/JSON::XS))
