@@ -1,5 +1,7 @@
 # zsh perl completions
 
+Move to [https://github.com/syohex/zsh-misc-completions](https://github.com/syohex/zsh-misc-completions)
+
 * amon2-setup.pl([Amon2](https://metacpan.org/module/Amon2))
 * carmel([Carmel](https://github.com/miyagawa/Carmel))
 * carton([Carton](https://metacpan.org/module/Carton))
